@@ -1,0 +1,34 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package amanya.ugandawordcounter2;
+
+/**
+ *
+ * @author user
+ */
+import java.util.Scanner;
+public class UgandaWordCounter2 {
+   public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter book description:");
+        String description = scanner.nextLine();
+
+        String lowerDesc = description.toLowerCase();
+        String target = "uganda";
+        int count = 0;
+        int index = 0;
+
+        while ((index = lowerDesc.indexOf(target, index)) != -1) {
+            count++;
+            index += target.length();
+        }
+
+        System.out.println("The word \"Uganda\" appears " + count + " times in the description.");
+
+        scanner.close();
+    }
+}
+    
